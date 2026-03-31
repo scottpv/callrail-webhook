@@ -1,4 +1,4 @@
-module.exports = (req, res) => {
+export default function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).send('Method Not Allowed');
   }
@@ -8,4 +8,4 @@ module.exports = (req, res) => {
   console.log('Incoming CallRail event:', call);
 
   return res.status(200).send('OK');
-};
+}
